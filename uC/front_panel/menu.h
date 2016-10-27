@@ -62,25 +62,27 @@ typedef struct {
 #define MENU_OPTION_TYPE_NONE						99
 
 //! Show band change mode, auto or manual
-#define MENU_POS_BAND_MODE				0
+#define MENU_POS_BAND_MODE                 0
+//! Shot the radio model
+#define MENU_POS_RADIO_MODEL               1
 //! Show the radio output ptt ON/OFF
-#define MENU_POS_RADIO_PTT				1
+#define MENU_POS_RADIO_PTT                 2
 //! Show the amplifier output ptt ON/OFF
-#define MENU_POS_AMP_PTT					2
+#define MENU_POS_AMP_PTT                   3
 //! Change the backlight level of the LCD
-#define MENU_POS_BACKLIGHT_LEVEL	3
+#define MENU_POS_BACKLIGHT_LEVEL           4
 //! Show network actvitity
-#define MENU_POS_SHOW_INFO		4
+#define MENU_POS_SHOW_INFO                 5
 //! Show MISC menu
-#define MENU_POS_MISC        			5
+#define MENU_POS_MISC                      6
 //! Show the power meter addresses
-#define MENU_POS_SHOW_POWERMETER_ADDR 6
+#define MENU_POS_SHOW_POWERMETER_ADDR      7
 //! Show the ant disable/enable feature
-#define MENU_POS_ANT_STATUS       7
-//! Show the error menu 
-#define MENU_POS_AMP_STATUS      8
-//! Show the error menu 
-#define MENU_POS_SHOW_ERRORS      9
+#define MENU_POS_ANT_STATUS                8
+//! Show the error menu
+#define MENU_POS_AMP_STATUS                9
+//! Show the error menu
+#define MENU_POS_SHOW_ERRORS               10
 
 //! Menu flag scroll up
 #define MENU_SCROLL_UP			0

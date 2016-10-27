@@ -87,9 +87,12 @@ const struct_menu_option menu_option_amp_ptt_output[] = {{"ON"},{"OFF"}};
 const struct_menu_option menu_option_radio_ptt_output[] = {{"ON"},{"OFF"}};
 //! Menu system option - Amplifier ON/OFF
 const struct_menu_option menu_option_amp_status[] = {{"ON"},{"OFF"}};
+//! Menu system option - Radio Model
+const struct_menu_option menu_option_radio_model[] = {{"Kenwood"},{"Icom"},{"FT1000"},{"FT1000MP"},{"FT1000MKV"},{"FT2000"}};
 
 /********* SETUP MENUS *********/
 const prog_char header_1[] PROGMEM = "Band change";
+const prog_char header_radio_model[] PROGMEM = "Radio Model";
 const prog_char header_2[] PROGMEM = "Radio PTT";
 const prog_char header_3[] PROGMEM = "Amplifier PTT";
 const prog_char header_4[] PROGMEM = "Backlight";
@@ -103,6 +106,7 @@ const prog_char header_10[] PROGMEM = "Errors";
 //! Menu system
 const struct_menu_text menu_system_text[] = {
 {MENU_POS_BAND_MODE, header_1, (struct_menu_option *)menu_option_band_selection_mode, 2,MENU_OPTION_TYPE_NORMAL},
+{MENU_POS_RADIO_MODEL, header_radio_model, (struct_menu_option *)menu_option_radio_model, 6, MENU_OPTION_TYPE_NORMAL},
 {MENU_POS_RADIO_PTT, header_2, (struct_menu_option *)menu_option_radio_ptt_output, 2,MENU_OPTION_TYPE_NORMAL},
 {MENU_POS_AMP_PTT, header_3, (struct_menu_option *)menu_option_amp_ptt_output, 2,MENU_OPTION_TYPE_NORMAL},
 {MENU_POS_BACKLIGHT_LEVEL, header_4, NULL, 0,MENU_OPTION_TYPE_SCROLL_NUMBERS},
@@ -488,6 +492,9 @@ void menu_action(unsigned char menu_action_type) {
         
         main_update_status_field();
 			}
+                        else if (current_menu_pos == MENU_POS_RADIO_MODEL) {
+                            radio_interface_set_model(current_menu_pos);
+                        }
 			else if (current_menu_pos == MENU_POS_RADIO_PTT) {
 				if (current_menu_option_selected[current_menu_pos] == 0)
 					runtime_settings.radio_ptt_output = 1;
